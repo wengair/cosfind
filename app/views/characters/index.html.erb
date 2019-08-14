@@ -6,6 +6,9 @@
   <li> <%= link_to character.name, character_path(character) %> </li>
   <li><%= character.price %></li>
   <li><%= character.description %></li>
-  <li><%= link_to "delete character", character, method: :delete %></li>
+  <li><% if policy(character).destroy?%>
+    <%= link_to "delete character", character, method: :delete %>
+      <% end %>
+    </li>
 <% end %>
 </ul>

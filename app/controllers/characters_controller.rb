@@ -1,18 +1,22 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.all
+    @characters = policy_scope(Character)
+    authorize @characters
   end
 
   def show
-    @character = Character.find(params[:id])
+    @character = policy_scope(Character).find(params[:id])
+    authorize @character
   end
 
   def new
     @character = Character.new
+    authorize @character
   end
 
   def create
     @character = Character.new(str_params)
+    authorize @character
     @character.user = current_user
     @character.save
     if @character.save
@@ -23,7 +27,8 @@ class CharactersController < ApplicationController
   end
 
   def destroy
-    @character = Character.find(params[:id])
+    @character = policy_scope(Character).find(params[:id])
+    authorize @character
     @character.destroy
     redirect_to characters_index_path
   end
