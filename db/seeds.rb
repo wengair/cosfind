@@ -5,17 +5,16 @@ User.destroy_all
 Character.destroy_all
 
 # create users
-counter = 1
 5.times do |counter|
-  User.create(email: "test#{counter}", password: "password#{counter}", name: "name#{counter}", real_name: Faker::Name.name)
   counter += 1
+  User.create!(email: "test#{counter}@gmail.com", password: "123456", name: "name#{counter}", real_name: Faker::Name.name)
 end
-
-users = User.all
 
 # create characters
-10.times do
-  Character.create(name: "#{Faker::Superhero.unique.prefix} #{Faker::Superhero.unique.descriptor}", price: Faker::Number.within(range: 100..1000), description: Faker::Lorem.paragraph, photo: Faker::LoremFlickr.image(size: "50x60", search_terms: ['anime']), user_id: users.sample)
+User.all.each do |user|
+  character = Character.new(name: "#{Faker::Superhero.unique.prefix} #{Faker::Superhero.unique.descriptor}", price: Faker::Number.within(range: 100..1000), description: Faker::Lorem.paragraph, user: user)
+  character.remote_photo_url = Faker::LoremFlickr.image(size: "300x300", search_terms: ['anime'])
+  character.save!
 end
 
-print "Complete!"
+print "Added 5 users and assigned 10 characters randomly"
