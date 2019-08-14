@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'bookings/index'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'characters/index'
-  get 'characters/show'
-  get 'characters/new'
-  get 'characters/create'
-  get 'characters/destroy'
   devise_for :users
   root to: 'pages#home'
   resources :characters, only: [:index, :show, :new, :create, :destroy]do

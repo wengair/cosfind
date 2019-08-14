@@ -1,11 +1,10 @@
 class CharactersController < ApplicationController
   def index
     @characters = policy_scope(Character)
-    authorize @characters
   end
 
   def show
-    @character = policy_scope(Character).find(params[:id])
+    @character = Character.find(params[:id])
     authorize @character
   end
 
@@ -27,10 +26,10 @@ class CharactersController < ApplicationController
   end
 
   def destroy
-    @character = policy_scope(Character).find(params[:id])
+    @character = Character.find(params[:id])
     authorize @character
     @character.destroy
-    redirect_to characters_index_path
+    redirect_to characters_path
   end
 
   private
