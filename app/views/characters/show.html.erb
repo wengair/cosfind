@@ -1,10 +1,18 @@
-<h1>Characters#show</h1>
+<div class="container">
+  <div class="column">
+    <div class="char_img">
+      <%= cl_image_tag @character.photo %>
+    </div>
 
-<ul>
-  <%= cl_image_tag @character.photo %>
-  <li><%= @character.name %></li>
-  <li><%= @character.price %></li>
-  <li><%= @character.description %></li>
-</ul>
+    <div class="char_desc">
+      <h2>Info</h2>
+      <p>Description</p>
+      <p><%= @character.description %></p>
+    </div>
 
-<%= render 'bookings/new' %>
+    <div class="char_form">
+      <%= render 'bookings/new' %>
+
+    </div>
+  </div>
+</div>
