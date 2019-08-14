@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
-    @characters = Character.all
+    @user = User.find(params[:id])
+    authorize @user
+    @characters = @user.characters
   end
 end
