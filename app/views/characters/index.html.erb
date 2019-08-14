@@ -1,11 +1,22 @@
-<h1>Characters#index</h1>
 
-<ul>
-<% @characters.each do |character| %>
-  <%= cl_image_tag character.photo %>
-  <li> <%= link_to character.name, character_path(character) %> </li>
-  <li><%= character.price %></li>
-  <li><%= character.description %></li>
-  <li><%= link_to "delete character", character, method: :delete %></li>
-<% end %>
-</ul>
+<div class="container">
+  <ul>
+    <% @characters.each do |character| %>
+    <div class="card-trip">
+      <%= cl_image_tag character.photo %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= link_to character.name, character_path(character) %></h2>
+          <p><%= character.description %></p>
+        </div>
+        <h2 class="card-trip-pricing">¥<%= character.price %></h2>
+        <%= link_to character, method: :delete do%>
+        <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+</div>
+
+
