@@ -1,2 +1,8 @@
 <h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+
+<ul>
+  <%= cl_image_tag @character.photo %>
+  <li><%= @character.name %></li>
+  <li><%= @character.price %></li>
+  <li><%= @character.description %></li>
+</ul>
