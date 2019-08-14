@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 2019_08_14_072318) do
   create_table "bookings", force: :cascade do |t|
     t.string "location"
     t.date "date"
-    t.string "status"
+    t.string "status", default: "pending"
     t.bigint "character_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
     t.index ["character_id"], name: "index_bookings_on_character_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
