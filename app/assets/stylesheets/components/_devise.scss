@@ -1,0 +1,49 @@
+.login_h2 {
+  text-align: center;
+  font-weight: lighter;
+  color: rgba(0,0,0,0.4);
+}
+.row {
+  justify-content: center;
+  .column {
+    padding: 60px  30px;
+    background-color: white;
+    border-radius: 5px;
+    a {
+      font-weight: lighter;
+      color: rgba(0,0,0,0.3);
+    }
+  }
+}
+
+.form-actions{
+  // red color to button
+  background-color: #EA1E63;
+  border-radius: 30px;
+  height: 40px;
+  width:  110px;
+  text-align: center;
+  margin: 0  auto;
+
+  .btn{
+    color: white;
+    font-weight: lighter;
+  }
+  &:hover{
+    background-color: #b51349;
+  }
+}
+.form-control {
+  border-style: none;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  width: 60vh;
+}
+.form-control-label{
+  font-weight: lighter;
+  color: rgba(0,0,0,0.3);
+}
+.form-check-label{
+  font-weight: lighter;
+  color: rgba(0,0,0,0.3);
+}
+
