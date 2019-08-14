@@ -15,11 +15,17 @@ class CharactersController < ApplicationController
     @character = Character.new(str_params)
     @character.user = current_user
     @character.save
+    if @character.save
+      redirect_to character_path(@character)
+    else
+      render :new
+    end
   end
 
   def destroy
     @character = Character.find(params[:id])
     @character.destroy
+    redirect_to characters_index_path
   end
 
   private
