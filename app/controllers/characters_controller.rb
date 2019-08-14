@@ -1,8 +1,10 @@
 class CharactersController < ApplicationController
   def index
+    @characters = Character.all
   end
 
   def show
+    @character = Character.find(params[:id])
   end
 
   def new
@@ -11,11 +13,13 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(str_params)
-    @character.user = User.first
+    @character.user = current_user
     @character.save
   end
 
   def destroy
+    @character = Character.find(params[:id])
+    @character.destroy
   end
 
   private
