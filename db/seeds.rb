@@ -1,8 +1,8 @@
 require 'faker'
 
 # destroy all
-User.destroy_all
 Character.destroy_all
+User.destroy_all
 
 # create users
 5.times do |counter|
