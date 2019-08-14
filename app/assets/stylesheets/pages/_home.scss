@@ -1,1 +1,16 @@
-// Specific CSS for your home-page
+.home-banner {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30");
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+  margin: 0;
+  h1 {
+    font-family: 'press start 2p';
+    font-size: 45px
+  }
+  a {
+    color: white;
+  }
+}
