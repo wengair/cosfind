@@ -9,7 +9,7 @@
           <h2><%= link_to character.name, character_path(character) %></h2>
           <p><%= character.description %></p>
         </div>
-        <h2 class="card-trip-pricing">$<%= character.price %>/day</h2>
+        <h2 class="card-trip-pricing">$<%= character.price %> /per day</h2>
         <% if policy(character).destroy?%>
           <%= link_to character, method: :delete do%>
         <i class="fas fa-trash-alt"></i>
