@@ -1,4 +1,8 @@
+body {
+  background-color: $whiteish;
+}
 .login_h2 {
+  font-family: sans-serif;
   text-align: center;
   font-weight: lighter;
   color: rgba(0,0,0,0.4);
@@ -18,7 +22,7 @@
 
 .form-actions{
   // red color to button
-  background-color: #EA1E63;
+  background-color: $pinkish;
   border-radius: 30px;
   height: 40px;
   width:  110px;
@@ -30,7 +34,7 @@
     font-weight: lighter;
   }
   &:hover{
-    background-color: #b51349;
+    background-color: $dark-redish;
   }
 }
 .form-control {
