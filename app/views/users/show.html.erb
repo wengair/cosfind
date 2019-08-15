@@ -1,8 +1,9 @@
 <h1>Users#show</h1>
+<%= render 'bookings/index' %>
 <%= link_to "add a character",  new_user_character_path(current_user) %>
 <ul>
 <% @characters.each do |character| %>
-  <%= cl_image_tag character.photo %>
+  <%= cl_image_tag character.photo, width: 400, height: 200 %>
   <li> <%= link_to character.name, characters_path(character) %> </li>
   <li><%= character.price %></li>
   <li><%= character.description %></li>
