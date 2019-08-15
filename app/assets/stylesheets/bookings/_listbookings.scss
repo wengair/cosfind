@@ -1,0 +1,21 @@
+.show_h2 {
+  text-align: center;
+  font-weight: lighter;
+  color: rgba(0,0,0,0.8);
+}
+
+.acc_dny_btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 35px;
+}
+
+#infos {
+  width: 100%;
+  .book_p {
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  }
+}
+

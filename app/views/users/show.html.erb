@@ -1,11 +1,3 @@
-<h1>Users#show</h1>
+<%= render 'bookings/index' %>
 <%= link_to "add a character",  new_character_path %>
-<ul>
-<% @characters.each do |character| %>
-  <%= cl_image_tag character.photo, width: 400, height: 200 %>
-  <li> <%= link_to character.name, characters_path(character) %> </li>
-  <li><%= character.price %></li>
-  <li><%= character.description %></li>
-  <li><%= link_to "delete character", character, method: :delete %></li>
-<% end %>
-</ul>
+<%= render 'characters/list_characters' %>
