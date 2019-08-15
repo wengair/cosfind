@@ -1,12 +1,12 @@
 
 <div class="container">
   <% if params[:label] == 'character' %>
-  <ul>
+  <div class="row">
     <div class="add-char">
-    <%= link_to "add a character",  new_character_path, class: "btn btn-secondary" %>
+      <%= link_to "add a character",  new_character_path, class: "btn btn-secondary" %>
     </div>
     <%= render 'characters/list_characters' %>
-  </ul>
+  </div>
   <% else %>
     <%= render 'bookings/index' %>
   <% end %>
