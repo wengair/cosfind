@@ -1,6 +1,7 @@
 require 'faker'
 
 # destroy all
+Booking.destroy_all
 Character.destroy_all
 User.destroy_all
 
