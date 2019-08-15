@@ -47,6 +47,6 @@ class CharactersController < ApplicationController
   private
 
   def str_params
-    params.require(:character).permit(:name, :price, :photo, :description, :tag)
+    params.require(:character).permit(:name, :price, :photo, :description)#, :tag)
   end
 end
