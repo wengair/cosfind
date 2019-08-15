@@ -2,10 +2,10 @@
 <% pendings = @bookings.where("status = 'pending'") %>
 <%= render 'bookings/listbooking',bookings: pendings, status: 'pending' %>
 <h2>To be completed</h2>
-<% dealed = @bookings.where("DATE(date) >= ? AND status != 'pending'",Date.today) %>
+<% dealed = @bookings.where("DATE(date) >= ? AND status != 'pending'", Date.today) %>
 <%= render 'bookings/listbooking',bookings: dealed, status: 'deal' %>
 <h2>History</h2>
-<% histories = @bookings.where("DATE(date) < ?",Date.today) %>
+<% histories = @bookings.where("DATE(date) < ?", Date.today) %>
 <%= render 'bookings/listbooking',bookings: histories, status: 'history' %>
 
 
