@@ -1,24 +1,32 @@
-<% bookings.each do |booking|%>
-  <div class="container d-flex p-2 bg-secondary m-1">
-    <img src="<%= booking.character.photo %>" alt="" style="width:50px; height:50px;">
-    <div>
-      <p>Character: <%= booking.character.name %></p>
-      <p>Date: <%= booking.date %></p>
-      <p>Location: <%= booking.location %></p>
-      <p>Comment: <%= booking.comment %></p>
+<div class="container">
+  <ul>
+    <% bookings.each do |booking|%>
+      <div class="card-trip">
+        <img src="<%= booking.character.photo %>" alt="" style="">
+        <div class="card-trip-infos">
+          <div id="infos">
+            <h2><%= booking.character.name %></h2>
+            <p>Date: <%= booking.date %></p>
+            <p>Location: <%= booking.location %></p>
+            <p>Comment: <%= booking.comment %></p>
 
-      <% if status == 'pending' %>
-        <% if booking.character.user == current_user %>
-          <%= link_to "Accept", booking_path(change: 'accept'), method: :patch  %>
-          <%= link_to "Deny", booking_path(change: 'deny'), method: :patch %>
-        <% else %>
-          <span>Pending</span> <%= link_to "Cancel", booking_path(change: 'cancel'), method: :patch %>
-        <% end %>
-      <% elsif  booking.date >= Date.today && status != 'pending'%>
-        <span>Pending</span> <%= link_to "Cancel", booking_path(change: 'cancel'), method: :patch %>
-      <% else %>
-        <p><%= booking.status %></p>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+            <% if status == 'pending' %>
+              <% if booking.character.user == current_user %>
+              <div class="acc_dny_btns">
+                <%= link_to "Accept", booking_path(change: 'accept'), method: :patch  %>
+                <%= link_to "Deny", booking_path(change: 'deny'), method: :patch %>
+              </div>
+              <% else %>
+                <p class="book_p">Pending</p><%= link_to "Cancel", booking_path(change: 'cancel'), method: :patch %>
+              <% end %>
+            <% elsif  booking.date >= Date.today && status != 'pending'%>
+              <p class="book_p">Pending</p> <%= link_to "Cancel", booking_path(change: 'cancel'), method: :patch %>
+            <% else %>
+              <p class="book_p"><%= booking.status %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
