@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
   </head>
-  <body>
+  <body class="pb-4">
     <% if controller.controller_name != 'pages'%>
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
-      <%= render 'shared/footer' %>
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
+        <%= render 'shared/footer' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <% end %>
