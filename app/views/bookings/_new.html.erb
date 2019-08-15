@@ -1,5 +1,5 @@
 <%= simple_form_for [@character, @booking] do |f| %>
-  <%= f.input :location %>
+  <%= f.input :location, placeholder: '  Tokyo' %>
   <%= f.input :date %>
   <%= f.input :comment %>
   <%= f.submit "submit", class: "btn btn-secondary" %>

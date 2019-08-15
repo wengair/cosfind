@@ -1,15 +1,19 @@
 .char_img {
   img {
-    height: 240px;
-    width: 230px;
+
+    width: 16%;
     object-fit: fill;
     position: absolute;
     left: 20px;
+    top: 90px;
   }
 }
 
 .char_desc {
   text-align: center;
+  margin-top: 75px;
+  margin-left: 16%;
+  margin-right: 16%;
 }
 
 .btn-secondary {
@@ -20,5 +24,11 @@
   }
 }
 .char_form{
-  margin: 150px 170px;
+  margin: 110px 12%;
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+}
+.btn-secondary{
+  border-color: rgba(0,0,0,0)
 }
