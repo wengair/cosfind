@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only:[:show] do
     resources :characters, only: [:new]
   end
+  get '/tagged', to: "characters#tagged", as: :tagged
 end
