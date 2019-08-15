@@ -20,4 +20,8 @@ class CharacterPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def tagged?
+    true
+  end
 end

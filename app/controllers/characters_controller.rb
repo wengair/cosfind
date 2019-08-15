@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
   def index
-    @characters = policy_scope(Character)
+    if @characters.nil?
+      @characters = policy_scope(Character)
+    end
   end
 
   def show
@@ -33,9 +35,18 @@ class CharactersController < ApplicationController
     redirect_to characters_path
   end
 
+  def tagged
+    if params[:tag][:tag_list].present?
+      @characters = Character.tagged_with(params[:tag][:tag_list])
+    else
+      @characters = Character.all
+    end
+    authorize @characters
+  end
+
   private
 
   def str_params
-    params.require(:character).permit(:name, :price, :photo, :description)
+    params.require(:character).permit(:name, :price, :photo, :description, :tag)
   end
 end

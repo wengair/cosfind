@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :characters, only: [:index, :show, :create, :destroy] do
     resources :bookings, only: [:new, :create]
   end
-
-  resources :bookings , only: [:index]
-  resources :users, only:[:show]
+  resources :bookings , only: [:index, :edit, :update]
+  resources :users, only:[:show] do
+    resources :characters, only: [:new]
+  end
+  get '/tagged', to: "characters#tagged", as: :tagged
 end
