@@ -225,6 +225,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
   autoprefixer-rails
   bootsnap
+  byebug
   carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
   devise
