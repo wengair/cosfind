@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
   def index
     if @characters.nil?
-      @characters = policy_scope(Character)
+      @characters = policy_scope(Character).order('id DESC')
     end
   end
 
