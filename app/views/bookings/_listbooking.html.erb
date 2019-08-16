@@ -8,19 +8,21 @@
       <p>Date: <%= booking.date %></p>
       <p>Location: <%= booking.location %></p>
       <p>Comment: <%= booking.comment %></p>
-
       <% if status == 'pending' %>
         <% if booking.character.user == current_user %>
-          <%= link_to "Accept", booking_path(change: 'accept'), method: :patch  %>
-          <%= link_to "Deny", booking_path(change: 'deny'), method: :patch %>
+          <div class="acc_dny_btns">
+            <%= link_to @status[:accept], booking_path(booking,change: @status[:accept]), method: :patch  %>
+            <%= link_to @status[:deny], booking_path(booking,change: @status[:deny]), method: :patch %>
+          </div>
         <% else %>
-          <span>Pending</span> <%= link_to "Cancel", booking_path(change: 'cancel'), method: :patch %>
+          <p class="book_p">Pending</p><%= link_to @status[:cancel], booking_path(booking,change: @status[:cancel]), method: :patch %>
         <% end %>
-      <% elsif  booking.date >= Date.today && status != 'pending'%>
-        <span>Pending</span> <%= link_to "Cancel", booking_path(change: 'cancel'), method: :patch %>
+      <% elsif  status == 'deal' %>
+        <p class="book_p">Dealed</p> <%= link_to @status[:cancel], booking_path(booking,change: @status[:cancel]), method: :patch %>
       <% else %>
-        <p><%= booking.status %></p>
+        <p class="book_p"><%= booking.status %></p>
       <% end %>
-    </div>
-  </div>
+     </div>
+   </div>
+ </div>
 <% end %>
