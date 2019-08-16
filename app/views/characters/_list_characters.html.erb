@@ -1,17 +1,19 @@
-    <% @characters.each do |character| %>
-      <div class="card-trip">
-        <%= cl_image_tag(character.photo, width: 300, height: 200, crop: :thumb, gravity: :face) %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= link_to character.name, character_path(character) %></h2>
-            <p><%= character.description %></p>
-          </div>
-          <h2 class="card-trip-pricing">$<%= character.price %> /per day</h2>
-          <% if policy(character).destroy?%>
-          <%= link_to character, method: :delete do%>
-          <i class="fas fa-trash-alt"></i>
-          <% end %>
-          <% end %>
-        </div>
+<% @characters.each do |character| %>
+  <div class="card-trip">
+    <%= cl_image_tag(character.photo, width: 300, height: 200, crop: :thumb, gravity: :face) %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= link_to character.name, character_path(character) %></h2>
+        <p><%= character.description %></p>
       </div>
-    <% end %>
+      <h2 class="card-trip-pricing">$<%= character.price %> /per day</h2>
+      <% if policy(character).destroy?%>
+      <%= link_to character, method: :delete do%>
+      <i class="fas fa-trash-alt"></i>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="filler"></div>
+<div class="filler"></div>
