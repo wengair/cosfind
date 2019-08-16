@@ -1,2 +1,115 @@
 @import "show";
-@import "components/search-bar"
+@import "components/search-bar";
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 10px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.index_a {
+  padding: 7px 16px;
+  background-color: $pinkish;
+  color: white;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 19px;
+  &:hover {
+    background-color: $dark_redish;
+  }
+}
+
+// index
+.container {
+  ul{
+    display: flex;
+  }
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height:350px;
+  width:300px;
+  margin: 20px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 13px;
+  opacity: .7;
+  margin: 0;
+}
+.card-trip-pricing {
+  position: absolute;
+  color: $pinkish;
+  top: 105px;
+  left: 10px;
+  text-align: left;
+}
+
+.fa-trash-alt{
+  position: absolute;
+  top: 110px;
+  right: 20px;
+  font-size: 20px;
+  color: $pinkish;
+  &:hover {
+    color: $dark-redish
+  }
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  a {
+    color: black;
+    font-size:  20px;
+  }
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+.container {
+  .char_h4 {
+    text-align: left;
+    font-family: Montserrat;
+    font-weight: lighter;
+    margin-left: 65px;
+  }
+}
+

@@ -1,21 +1,81 @@
 .show_h2 {
-  text-align: center;
+  text-align: left;
   font-weight: lighter;
-  color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
+  margin-left: 36px;
 }
 
 .acc_dny_btns {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
-  margin: 10px 35px;
+  flex-direction: column;
 }
 
 #infos {
   width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
   .book_p {
-  font-weight: bold;
-  font-size: 15px;
-  text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+  }
+  .main_info  {
+    h2 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 14.5px;
+    }
+  }
+  .lb_cnd {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 70px;
+    text-align: center;
+    a {
+      margin: 5px;
+      text-decoration: none;
+      padding: 5px;
+      background-color: $pinkish;
+      color: white;
+      border-radius: 20px;
+      text-align: center;
+      width: 100px;
+      &:hover {
+        background-color: $dark_redish;
+      }
+    }
   }
 }
+
+.container {
+  .lb_cards {
+    display: -webkit-box;
+    display: flex;
+    box-sizing: border-box;
+    width: auto;
+    height: 190px;
+    .lb_infos {
+      width: 100%;
+      align-items: center;
+    }
+    .lb_img {
+      height: 100%;
+      width: 190px;
+    }
+  }
+}
+
+.booking_brdr {
+  padding: 10px 0px;
+  background-color: rgba(0,0,0,0.03);
+  border-radius: 20px;
+}
+
 
