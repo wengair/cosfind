@@ -1,17 +1,15 @@
+
 <div class="booking_brdr">
   <h2 class="show_h2">Pending</h2>
-  <% pendings = @bookings.where("status = 'pending'") %>
+  <% pendings = @bookings.where("DATE(date) >= ? AND status = ?",Date.today,@status[:pending]) %>
   <%= render 'bookings/listbooking',bookings: pendings, status: 'pending' %>
 </div>
-
 <div class="booking_brdr">
   <h2 class="show_h2">To be completed</h2>
-  <% dealed = @bookings.where("DATE(date) >= ? AND status != 'pending'",Date.today) %>
+  <% dealed = @bookings.where("DATE(date) >= ? AND status = ?",Date.today,@status[:accept]) %>
   <%= render 'bookings/listbooking',bookings: dealed, status: 'deal' %>
 </div>
-
-<div class="booking_brdr">
-  <h2 class="show_h2">History</h2>
-  <% histories = @bookings.where("DATE(date) < ?",Date.today) %>
+<h2 class="show_h2">History</h2>
+  <% histories = @bookings.where("DATE(date) < ? OR status = ? OR status =?",Date.today, @status[:deny], @status[:cancel]) %>
   <%= render 'bookings/listbooking',bookings: histories, status: 'history' %>
 </div>
