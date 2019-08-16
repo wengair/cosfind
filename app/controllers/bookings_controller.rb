@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
     if current_user.admin
       @bookings = Booking.all
     else
-      @bookings = Booking.all.where()
+      @bookings = Booking.where('user = ? OR character.user = ?', current_user, current_user)
     end
   end
 
@@ -28,6 +28,13 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     authorize @booking
+    if params[:change] == 'accept'
+      @bookings = Booking.joins(:character).where("characters.user_id = ? AND date = ?", current_user, @booking.date)
+      @bookings.each do |booking|
+        booking.status = 'deny'
+        booking.save
+      end
+    end
     @booking.status = params[:change]
     @booking.save
     redirect_to user_path(current_user)
