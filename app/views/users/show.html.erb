@@ -1,8 +1,13 @@
-<% if params[:label] == 'booking' %>
-  <%= render 'bookings/index' %>
-  <% elsif params[:label] == "character" %>
-<%= link_to "add a character",  new_character_path %>
-<%= render 'characters/list_characters' %>
-<% end %>
 
-<div style="height:200px;"><p>1</p></div>
+<div class="container">
+  <% if params[:label] == 'character' %>
+  <div class="row">
+    <div class="add-char">
+      <%= link_to "add a character",  new_character_path, class: "btn btn-secondary" %>
+    </div>
+    <%= render 'characters/list_characters' %>
+  </div>
+  <% else %>
+    <%= render 'bookings/index' %>
+  <% end %>
+</div>

@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
   def index
     if @characters.nil?
-      @characters = policy_scope(Character)
+      @characters = policy_scope(Character).order('id DESC')
     end
   end
 
@@ -47,6 +47,6 @@ class CharactersController < ApplicationController
   private
 
   def str_params
-    params.require(:character).permit(:name, :price, :photo, :description, :tag)
+    params.require(:character).permit(:name, :price, :photo, :description)#, :tag)
   end
 end
