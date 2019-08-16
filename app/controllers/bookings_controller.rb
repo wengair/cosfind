@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    if current_user.admin
+      @bookings = Booking.all
+    else
+      @bookings = Booking.all.where()
+    end
   end
 
   def create
