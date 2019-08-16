@@ -1,7 +1,7 @@
 <div class="container">
   <div class="column">
     <div class="char_img">
-      <%= cl_image_tag @character.photo %>
+      <%= cl_image_tag @character.photo, crop: :thumb, gravity: :face %>
     </div>
 
     <div class="char_desc">
