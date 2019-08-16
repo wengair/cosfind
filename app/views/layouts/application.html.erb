@@ -15,9 +15,15 @@
     <% if controller.controller_name != 'pages'%>
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
-        <%= render 'shared/footer' %>
     <% end %>
     <%= yield %>
+    <% if controller.controller_name != 'pages'%>
+      <div class="footer mt-3">
+        <div class="footer-copyright pt-3">
+          <span style="font-family: 'press start 2p'">cos.find</span> is made with <i class="fas fa-heart"></i> by Jordan, Yuji, and JT
+        </div>
+      </div>
+    <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
