@@ -1,7 +1,16 @@
 class CharactersController < ApplicationController
   def index
-    if @characters.nil?
+    if params[:query] == ""
       @characters = policy_scope(Character).order('id DESC')
+    else
+      sql_query = " \
+        characters.name ILIKE :query \
+        OR characters.description ILIKE :query \
+        OR users.name ILIKE :query \
+      "
+      search_card = policy_scope(Character).joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      search_tags = policy_scope(Character).tagged_with(params[:query].split, any: true)
+      @characters = search_card + search_tags
     end
   end
 
