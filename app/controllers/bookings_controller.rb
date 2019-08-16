@@ -3,6 +3,15 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @markers = [{
+      lat: @booking.latitude,
+      lng: @booking.longitude,
+    }]
+  end
+
   def create
     @booking = Booking.new(str_params)
     @character = Character.find(params[:character_id])
@@ -13,7 +22,7 @@ class BookingsController < ApplicationController
       redirect_to user_path(current_user)
     else
       flash[:title] = '¡Error!'
-      flash[:notice] = 'You already booked this character in this date'
+      flash[:notice] = 'You already booked this character on this date'
       redirect_to character_path(@character)
     end
   end
