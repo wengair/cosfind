@@ -2,7 +2,8 @@
 <div class="container">
   <% bookings.each do |booking|%>
     <div class="card-trip lb_cards">
-      <img class="lb_img" src="<%= booking.character.photo %>" alt="" style="">
+      <!-- <img class="lb_img" src="<%= booking.character.photo %>" alt="" style=""> -->
+      <%= cl_image_tag(booking.character.photo, class: "lb_img", crop: :thumb, gravity: :face) %>
       <div class="card-trip-infos lb_infos">
         <div id="infos">
           <div class="main_info">
