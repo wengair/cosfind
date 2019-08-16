@@ -1,14 +1,4 @@
 
-
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-<% end %>
-
 <%= form_tag characters_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -19,9 +9,8 @@
     <!-- <i class="fas fa-search"></i> -->
 <% end %>
 
-<h4 style="text-align: center">Available cosplayers near you:</h4>
-
 <div class="container">
+  <h4 class="char_h4">Available cosplayers near you:</h4>
   <%# form_for :tag, url: '/tagged', method: :get do |f| %>
     <%#= f.text_field :tag_list %>
     <%#= f.submit "Submit" %>
@@ -29,5 +18,5 @@
 
   <div class="row">
     <%= render 'list_characters', characters: @characters %>
-    </div>
+  </div>
 </div>

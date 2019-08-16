@@ -1,14 +1,18 @@
+
 <div class="container">
-  <ul>
-    <% bookings.each do |booking|%>
-      <div class="card-trip">
-        <img src="<%= booking.character.photo %>" alt="" style="">
-        <div class="card-trip-infos">
-          <div id="infos">
+  <% bookings.each do |booking|%>
+    <div class="card-trip lb_cards">
+      <img class="lb_img" src="<%= booking.character.photo %>" alt="" style="">
+      <div class="card-trip-infos lb_infos">
+        <div id="infos">
+          <div class="main_info">
+            <%= link_to "more info", booking_path(booking.id) %>
             <h2><%= booking.character.name %></h2>
             <p>Date: <%= booking.date %></p>
             <p>Location: <%= booking.location %></p>
             <p>Comment: <%= booking.comment %></p>
+          </div>
+          <div class="lb_cnd">
             <% if status == 'pending' %>
               <% if booking.character.user == current_user %>
                 <div class="acc_dny_btns">
@@ -26,6 +30,7 @@
           </div>
         </div>
       </div>
-    <% end %>
-  </ul>
+    </div>
+  <% end %>
 </div>
+

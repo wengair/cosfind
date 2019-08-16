@@ -1,0 +1,34 @@
+.char_img {
+  img {
+
+    width: 16%;
+    object-fit: fill;
+    position: absolute;
+    left: 20px;
+    top: 90px;
+  }
+}
+
+.char_desc {
+  text-align: center;
+  margin-top: 75px;
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
+.btn-secondary {
+  background-color: $pinkish;
+  border-radius: 30px;
+  &:hover {
+    background-color: $dark_redish;
+  }
+}
+.char_form{
+  margin: 110px 12%;
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+}
+.btn-secondary{
+  border-color: rgba(0,0,0,0)
+}
