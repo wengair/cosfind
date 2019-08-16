@@ -3,7 +3,9 @@
   <% if params[:label] == 'character' %>
   <div class="row">
     <div class="add-char">
-      <%= link_to "add a character",  new_character_path, class: "btn btn-secondary" %>
+      <%= link_to new_character_path, class: "btn btn-secondary add_btn" do%>
+       <i class="fas fa-plus-circle add_logo"></i>Add a Character
+      <% end %>
     </div>
     <%= render 'characters/list_characters' %>
   </div>
