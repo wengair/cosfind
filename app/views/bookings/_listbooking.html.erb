@@ -1,5 +1,14 @@
 
 <div class="container">
+  <% if bookings.empty? %>
+    <% if status == 'pending' %>
+      <p>No pending bookings</p>
+    <% elsif status == 'deal' %>
+      <p>No bookings need to be completed</p>
+    <% elsif status == 'history' %>
+      <p>No booking history</p>
+    <% end %>
+  <% end %>
   <% bookings.each do |booking|%>
     <div class="card-trip lb_cards">
       <!-- <img class="lb_img" src="<%= booking.character.photo %>" alt="" style=""> -->
