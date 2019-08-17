@@ -18,9 +18,14 @@
     <% end %>
     <%= yield %>
     <% if controller.controller_name != 'pages'%>
-      <div class="footer mt-3">
-        <div class="footer-copyright pt-3">
-          <span style="font-family: 'press start 2p'">cos.find</span> is made with <i class="fas fa-heart"></i> by Jordan, Yuji, and JT
+      <div class="footer mt-3 border">
+        <div class="footer-links">
+          <a href="#" style="font-size:15px">Home</a>
+          <a href="#" style="font-size:15px">My Bookings</a>
+          <a href="#" style="font-size:15px">My Characters</a>
+        </div>
+        <div class="footer-copyright">
+          This footer is made with <i class="fas fa-heart"></i> by Jordan, Yuji, and JT
         </div>
       </div>
     <% end %>
