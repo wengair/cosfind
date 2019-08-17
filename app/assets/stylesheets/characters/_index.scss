@@ -39,6 +39,9 @@
   border-style: none;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  &:hover {
+    background-color: $dark_redish;
+  }
 }
 
 .text_search {

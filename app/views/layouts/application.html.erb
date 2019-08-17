@@ -18,7 +18,9 @@
           <%= render 'shared/flashes' %>
         </div>
     <% end %>
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
     <% if controller.controller_name != 'pages'%>
       <div class="footer mt-3 border">
         <div class="footer-links">

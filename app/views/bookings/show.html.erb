@@ -1,7 +1,8 @@
-<div class="container border mb-5">
-  <div class="row"><h2>Your booking on <%= @booking.date %></h2></div>
+<div class="container border mb-5 book_conatiner">
+
 
   <div class="d-flex justify-content-around">
+    <div class="book_show">
       <div class="card-trip">
         <%= cl_image_tag(@booking.character.photo, width: 300, height: 200, crop: :thumb, gravity: :face) %>
         <div class="card-trip-infos">
@@ -11,6 +12,8 @@
           </div>
           <h2 class="card-trip-pricing">$<%= @booking.character.price %> /per day</h2>
         </div>
+      </div>
+      <h2>Your booking on <%= @booking.date %></h2>
     </div>
 
     <div id="map"

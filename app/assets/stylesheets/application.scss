@@ -15,4 +15,8 @@
 @import "bookings/index";
 @import "components/footer";
 @import "users/index";
-@import "bookings/index"
+@import "bookings/index";
+
+.content{
+  min-height: calc(100vh - 50px);
+}

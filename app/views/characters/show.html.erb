@@ -1,19 +1,25 @@
-<div class="container">
-  <div class="">
-    <div class="left_info">
-    <div class="char_img">
-      <%= cl_image_tag @character.photo, crop: :thumb, gravity: :face %>
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-sm-3 d-flex">
 
-    <div class="char_desc">
-      <h2>Info</h2>
-      <p>Description</p>
-      <p><%= @character.description %></p>
-    </div>
-    </div>
-    <div class="char_form">
-      <%= render 'bookings/new' %>
+      <div class="left_info">
+        <div class="char_img">
+          <%= cl_image_tag @character.photo, crop: :thumb, gravity: :face %>
+        </div>
 
+        <div class="char_desc">
+          <h2>Info</h2>
+          <p class="char_price_info">¥ <%= @character.price %> <p class="char_price_info char_price_info_2">/per day</p></p>
+          <p >Description</p>
+          <p><%= @character.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col col-sm-9">
+      <div class="char_form">
+        <%= render 'bookings/new' %>
+
+      </div>
     </div>
   </div>
 </div>
