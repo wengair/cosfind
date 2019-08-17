@@ -3,7 +3,7 @@
     <div class="column signin_clm">
       <h1>Create your character</h1>
 
-      <%= simple_form_for(@character) do |f| %>
+      <%= simple_form_for @character do |f| %>
         <%= f.input :name%>
         <%= f.input :price%>
         <%= f.input :description%>

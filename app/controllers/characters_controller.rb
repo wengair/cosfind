@@ -45,7 +45,11 @@ class CharactersController < ApplicationController
     else
       flash[:notice] = "You can't delete the character which has booking histories"
     end
-    redirect_to user_path(current_user, label: 'character')
+    respond_to do |format|
+      format.js # <-- will render `app/views/reviews/create.js.erb`
+      format.html { redirect_to user_path(current_user, label: 'character') }
+    end
+    # redirect_to user_path(current_user, label: 'character')
   end
 
   def tagged

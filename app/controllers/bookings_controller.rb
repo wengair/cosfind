@@ -30,7 +30,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to user_path(current_user)
     else
-      # flash[:notice] = 'You already booked this character on this date'
       flash[:notice] = 'You already booked this character on this date'
       redirect_to character_path(@character)
     end
