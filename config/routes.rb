@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  authenticated :user do
+    root 'characters#index'
+  end
   root to: 'pages#home'
   resources :characters, only: [:new]
   resources :characters, only: [:index, :show, :create, :destroy] do
