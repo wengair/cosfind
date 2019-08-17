@@ -40,8 +40,12 @@ class CharactersController < ApplicationController
   def destroy
     @character = Character.find(params[:id])
     authorize @character
-    @character.destroy
-    redirect_to characters_path
+    if @character.bookings.empty?
+      @character.destroy
+    else
+      flash[:notice] = "You can't delete the character which has booking histories"
+    end
+    redirect_to user_path(current_user, label: 'character')
   end
 
   def tagged
