@@ -16,7 +16,6 @@
       <div class="card-trip-infos lb_infos">
         <div id="infos">
           <div class="main_info">
-            <%= link_to "more info", booking_path(booking.id) %>
             <h2><%= booking.character.name %></h2>
             <p>Date: <%= booking.date %></p>
             <p>Location: <%= booking.location %></p>
@@ -33,10 +32,11 @@
                 <p class="book_p">Pending</p><%= link_to @status[:cancel], booking_path(booking,change: @status[:cancel]), method: :patch %>
               <% end %>
             <% elsif  status == 'deal' %>
-              <p class="book_p">Dealed</p> <%= link_to @status[:cancel], booking_path(booking,change: @status[:cancel]), method: :patch %>
+              <p class="book_p">To be Completed</p> <%= link_to @status[:cancel], booking_path(booking,change: @status[:cancel]), method: :patch %>
             <% else %>
               <p class="book_p"><%= booking.status %></p>
             <% end %>
+            <%= link_to "info", booking_path(booking.id) %>
           </div>
         </div>
       </div>
