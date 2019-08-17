@@ -16,7 +16,9 @@
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
     <% end %>
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
     <% if controller.controller_name != 'pages'%>
       <div class="footer mt-3">
         <div class="footer-copyright pt-3">

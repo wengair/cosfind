@@ -1,16 +1,28 @@
 .char_img {
-  img {
-    width: 16%;
-    object-fit: fill;
 
+  img {
+    margin-top: 30px;
+    width: 100%;
+    object-fit: fill;
   }
 }
 
 .char_desc {
   text-align: center;
-  margin-top: 75px;
-  margin-left: 16%;
-  margin-right: 16%;
+  // margin-top: 75px;
+  // margin-left: 16%;
+  // margin-right: 16%;
+  p {
+    margin: 0;
+  }
+  .char_price_info {
+    color: $pinkish;
+    font-weight: bolder;
+    font-size: 25px;
+  }
+  .char_price_info_2 {
+    font-size: 15px;
+  }
 }
 
 .btn-secondary {
@@ -21,7 +33,7 @@
   }
 }
 .char_form{
-  margin: 110px 12%;
+  margin: 30px;
   background-color: white;
   padding: 50px;
   border-radius: 20px;
