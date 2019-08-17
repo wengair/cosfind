@@ -8,5 +8,12 @@
   <div class="alert alert-warning alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= alert %>
+    <div style="display: flex; justify-content: center;">
+      <% if alert == 'Are you so longly that you need to book yourself?' %>
+        <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/446/799/a29.png" alt="" style="width:300px;">
+      <% elsif alert == 'What?' %>
+        <img src="https://cdn.ebaumsworld.com/thumbs/2019/03/21/054320/85916829/unsettled-tom-meme.jpg" alt="" style="width:300px;">
+      <% end %>
+    </div>
   </div>
 <% end %>

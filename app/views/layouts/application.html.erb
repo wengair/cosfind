@@ -14,7 +14,9 @@
   <body>
     <% if controller.controller_name != 'pages'%>
         <%= render 'shared/navbar' %>
-        <%= render 'shared/flashes' %>
+        <div id="flashes">
+          <%= render 'shared/flashes' %>
+        </div>
     <% end %>
     <%= yield %>
     <% if controller.controller_name != 'pages'%>

@@ -1,0 +1,7 @@
+<% if @character.destroyed? %>
+  var a = document.querySelector("[data-character-id='<%= @character.id %>']");
+  a.remove();
+<% else %>
+  var flash = document.querySelector("#flashes");
+  flash.innerHTML = '<%= j render "shared/flashes" %>';
+<% end %>

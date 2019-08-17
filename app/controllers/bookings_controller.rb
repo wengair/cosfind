@@ -20,12 +20,16 @@ class BookingsController < ApplicationController
     @booking = Booking.new(str_params)
     @character = Character.find(params[:character_id])
     authorize @character
+    same_user_alert = ['Are you so longly that you need to book yourself?', 'What?']
+    if @character.user == current_user
+      flash[:alert] = same_user_alert.sample
+      redirect_to character_path(@character) and return
+    end
     @booking.character = @character
     @booking.user = current_user
     if @booking.save
       redirect_to user_path(current_user)
     else
-      flash[:title] = '¡Error!'
       flash[:notice] = 'You already booked this character on this date'
       redirect_to character_path(@character)
     end
