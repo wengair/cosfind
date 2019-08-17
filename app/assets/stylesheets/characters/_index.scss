@@ -33,6 +33,21 @@
   }
 }
 
+// search
+.btn_search {
+  background-color: $pinkish;
+  border-style: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.text_search {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  &::placeholder {
+    color: rgba(0,0,0,0.2);
+  }
+}
 // index
 .container {
   ul{
