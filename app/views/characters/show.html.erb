@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="column">
+  <div class="">
+    <div class="left_info">
     <div class="char_img">
       <%= cl_image_tag @character.photo, crop: :thumb, gravity: :face %>
     </div>
@@ -9,7 +10,7 @@
       <p>Description</p>
       <p><%= @character.description %></p>
     </div>
-
+    </div>
     <div class="char_form">
       <%= render 'bookings/new' %>
 

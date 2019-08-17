@@ -9,14 +9,14 @@
 
 <div class="container pt-3 mt-3 border" style="background-color:rgba(0, 0, 0, 0.03); border-radius:20px">
   <%= form_tag characters_path, method: :get, class: "pr-5 mr-3 form-inline flex-row-reverse" do %>
-    <%= submit_tag 'Search', class: "btn btn-dark" %>
+    <%= submit_tag 'Search', class: "btn btn-dark btn_search" %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control text_search",
       placeholder: "Find a user / character"
     %>
   <% end %>
-  <h4 class="char_h4">Available cosplayers near you:</h4>
+  <h4 class="char_h4">Available characters near you:</h4>
   <%# form_for :tag, url: '/tagged', method: :get do |f| %>
     <%#= f.text_field :tag_list %>
     <%#= f.submit "Submit" %>
