@@ -31,7 +31,7 @@ class CharactersController < ApplicationController
     @character.user = current_user
     @character.save
     if @character.save
-      redirect_to character_path(@character)
+      redirect_to user_path(current_user, label: 'character')
     else
       render :new
     end
@@ -56,6 +56,6 @@ class CharactersController < ApplicationController
   private
 
   def str_params
-    params.require(:character).permit(:name, :price, :photo, :description)#, :tag)
+    params.require(:character).permit(:name, :price, :photo, :description, :tag_list)
   end
 end
