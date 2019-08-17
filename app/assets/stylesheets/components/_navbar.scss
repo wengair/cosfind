@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(119, 119, 119);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,7 +13,7 @@
 .navbar-lewagon .navbar-brand {
   font-family: 'Press Start 2P';
   a {
-    color: black;
+    color: white;
     text-decoration: none
   }
 }
