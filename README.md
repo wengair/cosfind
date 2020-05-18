@@ -24,6 +24,7 @@ Viewing booking requests and history
 ## Languages
 Ruby  
 HTML/CSS
+MySQL
 ## Gems/Frameworks
 Ruby on Rails  
 PostgreSQL  
