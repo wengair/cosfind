@@ -31,8 +31,8 @@ Webpacker
 Cloudinary  
 Pundit  
 Simple Form  
-bootstrap  
-faker  
-font-awesome
+Bootstrap  
+Faker  
+Font-awesome
 ## Credits
-Code Wizard was made in collaboration with [Jordan Luong](https://github.com/jordanwl/) and [Yuji Masuda](https://github.com/yujimsd) over a period of 5 days as part of our final project at [Le Wagon coding bootcamp](https://www.lewagon.com/).
+Cos Find was made in collaboration with [Jordan Luong](https://github.com/jordanwl/) and [Yuji Masuda](https://github.com/yujimsd) over a period of 5 days as part of our final project at [Le Wagon coding bootcamp](https://www.lewagon.com/).
